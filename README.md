@@ -191,6 +191,7 @@ python -m src.train --data-dir /kaggle/input/task07-pancreas/Task07_Pancreas
 | `--subset N` | First N train patients + proportional val (e.g. 25 → ~5 val) |
 | VRAM probe | At startup on CUDA: one train step reports peak GB + batch-size hint |
 | `tumor_patch_frac` | Logged each epoch — fraction of train patches with ≥1 tumor voxel |
+| `pred_tumor_voxels` / `gt_tumor_voxels` | Val collapse detector — if pred → 0 while Dice is flat, model stopped predicting tumor |
 
 **Tumor Dice stuck near 0?** Check data vs sampling first (do not change loss yet):
 
@@ -199,6 +200,18 @@ python -m src.diagnose_tumor --subset 25
 ```
 
 Positive patch crops are keyed on **label==2 (tumor)**, not pancreas. Console/CSV report `tumor_patches=XX%` each epoch — expect roughly ~67% with pos:neg=2:1 when volumes contain tumor.
+
+After sampling is confirmed (~90%+ tumor patches), try Focal Tversky and watch **both** Dice and predicted tumor voxel counts:
+
+```bash
+python -m src.train --subset 25 --epochs 20 --no-resume \
+  --loss focal_tversky --batch-size 4 \
+  --data-dir /path/to/Task07_Pancreas \
+  --output-dir outputs/training_subset25_focal
+```
+
+- **Collapse:** `pred_tumor=0` (or falling toward 0) while Dice stays ~0
+- **Progress:** `pred_tumor` stays nonzero and tumor Dice rises over epochs
 
 ### GPU memory (Colab T4, 16 GB)
 

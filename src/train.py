@@ -409,8 +409,11 @@ def validate(
     """
     Sliding-window inference on full validation volumes.
 
-    Returns (mean_val_loss, per_class_dice_dict).
-    Primary metric for checkpointing: per_class_dice_dict['tumor'].
+    Returns (mean_val_loss, metrics_dict) where metrics_dict includes:
+      - per-class Dice: background, pancreas, tumor
+      - pred_tumor_voxels / gt_tumor_voxels: absolute counts across the
+        validation set (collapse detector — if pred → 0 while Dice is flat,
+        the model stopped predicting tumor)
     """
     model.eval()
     inferer = SlidingWindowInferer(
@@ -430,6 +433,8 @@ def validate(
     post_label = AsDiscrete(to_onehot=NUM_CLASSES)
 
     val_losses: list[float] = []
+    pred_tumor_voxels = 0
+    gt_tumor_voxels = 0
     use_amp = bool(cfg.use_amp and device.type == "cuda")
 
     for batch in loader:
@@ -443,6 +448,11 @@ def validate(
             loss = loss_fn(logits, labels)
         val_losses.append(float(loss.detach().item()))
 
+        # Absolute tumor voxel counts (collapse detector).
+        pred_cls = torch.argmax(logits, dim=1)
+        pred_tumor_voxels += int((pred_cls == LABEL_TUMOR).sum().item())
+        gt_tumor_voxels += int((labels == LABEL_TUMOR).sum().item())
+
         # Decollate batch dim for metric transforms
         logit_list = decollate_batch(logits)
         label_list = decollate_batch(labels)
@@ -453,6 +463,8 @@ def validate(
     per_class = _per_class_dice_from_metric(dice_metric)
     dice_metric.reset()
     mean_loss = float(np.mean(val_losses)) if val_losses else float("nan")
+    per_class["pred_tumor_voxels"] = float(pred_tumor_voxels)
+    per_class["gt_tumor_voxels"] = float(gt_tumor_voxels)
     return mean_loss, per_class
 
 
@@ -631,13 +643,19 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
             val_loss, dice = validate(model, val_loader, loss_fn, device, cfg)
             val_seconds = time.time() - t_val
             tumor_dice = dice["tumor"]
+            pred_tumor = int(dice["pred_tumor_voxels"])
+            gt_tumor = int(dice["gt_tumor_voxels"])
         else:
             val_loss, dice = float("nan"), {
                 "background": float("nan"),
                 "pancreas": float("nan"),
                 "tumor": float("nan"),
+                "pred_tumor_voxels": float("nan"),
+                "gt_tumor_voxels": float("nan"),
             }
             tumor_dice = float("nan")
+            pred_tumor = 0
+            gt_tumor = 0
 
         # LR schedule
         if isinstance(scheduler, ReduceLROnPlateau):
@@ -656,6 +674,8 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
             "dice_background": round(dice["background"], 6) if do_val else "",
             "dice_pancreas": round(dice["pancreas"], 6) if do_val else "",
             "dice_tumor": round(dice["tumor"], 6) if do_val else "",
+            "pred_tumor_voxels": pred_tumor if do_val else "",
+            "gt_tumor_voxels": gt_tumor if do_val else "",
             "tumor_patch_frac": round(tumor_patch_frac, 4),
             "lr": lr_now,
             "train_seconds": round(train_seconds, 1),
@@ -674,6 +694,8 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
                 f"Dice bg={dice['background']:.3f} "
                 f"pancreas={dice['pancreas']:.3f} "
                 f"tumor={dice['tumor']:.3f} | "
+                f"pred_tumor={pred_tumor:,} "
+                f"gt_tumor={gt_tumor:,} | "
                 if do_val
                 else "val=skipped | "
             )
@@ -681,6 +703,12 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
             f"time: train={train_seconds:.1f}s val={val_seconds:.1f}s "
             f"epoch={epoch_seconds:.1f}s"
         )
+
+        if do_val and pred_tumor == 0 and gt_tumor > 0:
+            print(
+                "  !! COLLAPSE WARNING: model predicted 0 tumor voxels on val "
+                f"(gt has {gt_tumor:,}). Dice alone can hide this."
+            )
 
         # Always save last (for resume)
         save_checkpoint(
