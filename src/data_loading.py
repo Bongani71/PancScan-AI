@@ -9,9 +9,9 @@ Expected dataset layout (after extracting Task07_Pancreas.tar):
 
     data/Task07_Pancreas/
         dataset.json
-        imagesTr/   # training CT scans (.nii.gz)
+        imagesTr/   # training CT scans (.nii.gz or .nii)
         labelsTr/   # matching labels: 0=background, 1=pancreas, 2=tumor
-        imagesTs/   # unlabeled test scans
+        imagesTs/   # unlabeled test scans (.nii.gz or .nii)
 """
 
 from __future__ import annotations
@@ -30,6 +30,9 @@ import numpy as np
 LABEL_BACKGROUND = 0
 LABEL_PANCREAS = 1
 LABEL_TUMOR = 2
+
+# Prefer compressed MSD layout; fall back to plain .nii (e.g. Kaggle auto-decompress).
+NIFTI_EXTENSIONS: tuple[str, ...] = (".nii.gz", ".nii")
 
 # Colors for overlay visualization (RGBA, 0–1).
 COLOR_PANCREAS = np.array([0.2, 0.6, 1.0, 0.45])  # blue
@@ -63,6 +66,51 @@ def get_project_root() -> Path:
 def get_default_data_dir() -> Path:
     """Default location for the extracted MSD pancreas dataset."""
     return get_project_root() / "data" / "Task07_Pancreas"
+
+
+def patient_id_from_filename(name: str | Path) -> str:
+    """
+    Extract patient/case id from filenames like pancreas_001.nii.gz or .nii.
+
+    Strips known NIfTI extensions; does not invent IDs from other suffixes.
+    """
+    name = Path(name).name
+    lower = name.lower()
+    for ext in NIFTI_EXTENSIONS:
+        if lower.endswith(ext):
+            return name[: -len(ext)]
+    return Path(name).stem
+
+
+def find_nifti_file(directory: Path | str, patient_id: str) -> Path:
+    """
+    Locate ``{patient_id}.nii.gz`` or ``{patient_id}.nii`` under ``directory``.
+
+    Kaggle (and some extractors) auto-decompress ``.nii.gz`` to plain ``.nii``.
+    Prefer ``.nii.gz`` when both exist so local MSD layouts stay unchanged.
+
+    Raises
+    ------
+    FileNotFoundError
+        If the directory is missing or neither extension is present.
+    """
+    directory = Path(directory)
+    if not directory.is_dir():
+        raise FileNotFoundError(
+            f"NIfTI directory not found: {directory}\n"
+            f"(looking for patient '{patient_id}')"
+        )
+
+    candidates = [directory / f"{patient_id}{ext}" for ext in NIFTI_EXTENSIONS]
+    for path in candidates:
+        if path.is_file():
+            return path
+
+    tried = ", ".join(c.name for c in candidates)
+    raise FileNotFoundError(
+        f"No NIfTI file for patient '{patient_id}' in {directory}.\n"
+        f"Tried: {tried}"
+    )
 
 
 def load_dataset_manifest(data_dir: Path | None = None) -> dict:
@@ -108,16 +156,26 @@ def load_nifti(path: Path) -> VolumeInfo:
 
 
 def _patient_id_from_path(path: Path) -> str:
-    """Extract patient/case id from filenames like pancreas_001.nii.gz."""
-    stem = path.name.replace(".nii.gz", "")
-    return stem
+    """Extract patient/case id from a NIfTI path (.nii or .nii.gz)."""
+    return patient_id_from_filename(path)
 
 
 def resolve_training_paths(data_dir: Path, relative_path: str) -> Path:
-    """Convert a path from dataset.json (e.g. ./imagesTr/...) to an absolute path."""
+    """
+    Convert a path from dataset.json (e.g. ./imagesTr/...) to a real file path.
+
+    If the manifest points at ``.nii.gz`` but only ``.nii`` exists on disk
+    (common after Kaggle auto-decompress), resolve via ``find_nifti_file``.
+    """
     # Manifest paths start with "./"; strip that prefix before joining.
     clean = relative_path.lstrip("./")
-    return data_dir / clean
+    path = Path(data_dir) / clean
+    if path.is_file():
+        return path
+
+    patient_id = patient_id_from_filename(Path(clean).name)
+    subdir = Path(data_dir) / Path(clean).parent
+    return find_nifti_file(subdir, patient_id)
 
 
 def load_scan_with_label(

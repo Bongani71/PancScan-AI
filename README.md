@@ -104,6 +104,8 @@ python -m src.preprocessing
 
 **Portable split format:** `outputs/patient_split.json` stores **patient IDs only** (e.g. `"pancreas_270"`), never absolute paths. Training joins IDs with `data_dir` (`data/Task07_Pancreas` by default, or `--data-dir` on Kaggle/Colab).
 
+**NIfTI extensions:** Path lookup accepts both `{id}.nii.gz` and `{id}.nii` (Kaggle often auto-decompresses). Prefer `.nii.gz` when both exist.
+
 > If you still have an older `patient_split.json` that embeds Windows paths, **delete it and re-run preprocessing** before training:
 > ```bash
 > # Windows PowerShell

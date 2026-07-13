@@ -59,10 +59,12 @@ from src.data_loading import (
     LABEL_PANCREAS,
     LABEL_TUMOR,
     ScanPair,
+    find_nifti_file,
     get_default_data_dir,
     get_project_root,
     load_dataset_manifest,
     load_scan_with_label,
+    patient_id_from_filename,
     resolve_training_paths,
 )
 
@@ -195,7 +197,7 @@ def list_training_cases(data_dir: Path | None = None) -> list[dict[str, str]]:
     for entry in manifest["training"]:
         image_path = resolve_training_paths(root, entry["image"])
         label_path = resolve_training_paths(root, entry["label"])
-        patient_id = image_path.name.replace(".nii.gz", "")
+        patient_id = patient_id_from_filename(image_path)
         cases.append(
             {
                 "patient_id": patient_id,
@@ -298,23 +300,36 @@ def save_split(
     return output_path
 
 
-def resolve_case_paths(patient_id: str, data_dir: Path) -> dict[str, str]:
+def resolve_case_paths(
+    patient_id: str,
+    data_dir: Path,
+    *,
+    image_subdir: str = "imagesTr",
+    label_subdir: str | None = "labelsTr",
+) -> dict[str, str]:
     """
     Build image/label paths for one patient relative to ``data_dir``.
 
-    Expected layout::
+    Looks up ``.nii.gz`` or ``.nii`` via ``find_nifti_file`` so Kaggle
+    auto-decompressed volumes work the same as local MSD extracts.
 
-        data_dir/imagesTr/{patient_id}.nii.gz
-        data_dir/labelsTr/{patient_id}.nii.gz
+    Parameters
+    ----------
+    image_subdir:
+        ``imagesTr`` (labeled) or ``imagesTs`` (unlabeled test).
+    label_subdir:
+        ``labelsTr`` for training cases, or ``None`` for test (no labels).
     """
     data_dir = Path(data_dir)
-    image = data_dir / "imagesTr" / f"{patient_id}.nii.gz"
-    label = data_dir / "labelsTr" / f"{patient_id}.nii.gz"
-    return {
+    image = find_nifti_file(data_dir / image_subdir, patient_id)
+    result: dict[str, str] = {
         "patient_id": patient_id,
         "image": str(image),
-        "label": str(label),
     }
+    if label_subdir is not None:
+        label = find_nifti_file(data_dir / label_subdir, patient_id)
+        result["label"] = str(label)
+    return result
 
 
 def resolve_split_cases(
@@ -322,20 +337,47 @@ def resolve_split_cases(
     data_dir: Path,
     *,
     check_exists: bool = True,
+    image_subdir: str = "imagesTr",
+    label_subdir: str | None = "labelsTr",
 ) -> list[dict[str, str]]:
-    """Resolve a list of patient IDs into MONAI-ready path dicts."""
-    cases = [resolve_case_paths(pid, data_dir) for pid in patient_ids]
-    if check_exists and cases:
-        missing = [c for c in cases if not Path(c["image"]).exists()]
-        if missing:
-            sample = missing[0]
-            raise FileNotFoundError(
-                f"Could not find {len(missing)} image(s) under {data_dir}.\n"
-                f"Example missing: {sample['image']}\n"
-                "Set TrainConfig.data_dir / --data-dir to your Task07_Pancreas root "
-                "(the folder that contains imagesTr/ and labelsTr/)."
+    """
+    Resolve a list of patient IDs into MONAI-ready path dicts.
+
+    Uses ``find_nifti_file`` for each ID under imagesTr/labelsTr (or imagesTs).
+    ``check_exists`` is kept for API compatibility; resolution already verifies
+    files exist (raises FileNotFoundError on the first missing ID).
+    """
+    del check_exists  # existence is enforced inside find_nifti_file
+    try:
+        return [
+            resolve_case_paths(
+                pid,
+                data_dir,
+                image_subdir=image_subdir,
+                label_subdir=label_subdir,
             )
-    return cases
+            for pid in patient_ids
+        ]
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(
+            f"{exc}\n"
+            f"data_dir={data_dir}\n"
+            "Set TrainConfig.data_dir / --data-dir to your Task07_Pancreas root "
+            "(the folder that contains imagesTr/, labelsTr/, and optionally imagesTs/)."
+        ) from exc
+
+
+def resolve_test_cases(
+    patient_ids: list[str],
+    data_dir: Path,
+) -> list[dict[str, str]]:
+    """Resolve unlabeled test patient IDs under ``imagesTs/`` (.nii or .nii.gz)."""
+    return resolve_split_cases(
+        patient_ids,
+        data_dir,
+        image_subdir="imagesTs",
+        label_subdir=None,
+    )
 
 
 def load_split(path: Path) -> dict[str, list[str]]:
@@ -512,7 +554,7 @@ class PreprocessingPipeline:
         """Run the full pipeline on one case."""
         image_path = Path(image_path)
         label_path = Path(label_path)
-        pid = patient_id or image_path.name.replace(".nii.gz", "")
+        pid = patient_id or patient_id_from_filename(image_path)
 
         # Original metadata (for before/after comparison).
         raw = load_scan_with_label(image_path, label_path)
