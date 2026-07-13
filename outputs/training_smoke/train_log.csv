@@ -1,0 +1,3 @@
+epoch,train_loss,val_loss,dice_background,dice_pancreas,dice_tumor,lr,seconds
+0,2.235672,2.188513,0.419682,0.04698,0.002802,5e-05,6.5
+1,2.200434,2.178135,0.417341,0.047719,0.002752,0.0,6.5

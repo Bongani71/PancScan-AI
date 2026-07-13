@@ -1,0 +1,8 @@
+{
+  "best_tumor_dice": 0.0028015996795147657,
+  "epochs_run": 2,
+  "log_csv": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\outputs\\training_smoke\\train_log.csv",
+  "best_checkpoint": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\outputs\\training_smoke\\best_tumor_dice.pt",
+  "device": "cpu",
+  "smoke_test": true
+}

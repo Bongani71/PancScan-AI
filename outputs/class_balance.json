@@ -1,0 +1,19 @@
+{
+  "num_cases": 281,
+  "voxels": {
+    "background": 6988952255,
+    "pancreas": 13277450,
+    "tumor": 1995831,
+    "total": 7004225536
+  },
+  "ratios": {
+    "background": 0.9978194190176346,
+    "pancreas": 0.0018956342755893805,
+    "tumor": 0.0002849467067760623
+  },
+  "suggested_ce_weights": {
+    "background": 0.0007445733303046277,
+    "pancreas": 0.39192672206224743,
+    "tumor": 2.607328704607448
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "config": {
+    "target_spacing": [
+      1.0,
+      1.0,
+      2.5
+    ],
+    "hu_min": -100.0,
+    "hu_max": 240.0,
+    "crop_margin": 20,
+    "spatial_size": null
+  },
+  "split_path": "outputs\\patient_split.json",
+  "class_balance_path": "outputs\\class_balance.json",
+  "viz_path": "outputs\\data_exploration\\pancreas_290_preprocess_before_after.png",
+  "example_case": {
+    "patient_id": "pancreas_290",
+    "original_shape": [
+      512,
+      512,
+      97
+    ],
+    "processed_shape": [
+      163,
+      97,
+      74
+    ],
+    "original_spacing": [
+      0.9160159826278687,
+      0.9160159826278687,
+      2.5
+    ],
+    "processed_spacing": [
+      1.0,
+      1.0,
+      2.5
+    ]
+  }
+}
