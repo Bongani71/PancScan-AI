@@ -28,6 +28,7 @@ import numpy as np
 import torch
 from monai.transforms import (
     Compose,
+    DeleteItemsd,
     EnsureTyped,
     MapTransform,
     RandCropByPosNegLabeld,
@@ -130,6 +131,9 @@ def build_train_patch_transform(
                 image_threshold=0.0,
                 allow_smaller=False,  # we already padded above
             ),
+            # Drop the full-volume tumor mask — it is only used for crop centers.
+            # Leaving it in the dict breaks list_data_collate (variable shapes).
+            DeleteItemsd(keys=[KEYS_TUMOR_FG]),
             EnsureTyped(keys=[KEYS_IMAGE, KEYS_LABEL], data_type="tensor"),
         ]
     )
