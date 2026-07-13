@@ -58,6 +58,7 @@ except ImportError:  # pragma: no cover
     from torch.cuda.amp import GradScaler, autocast  # type: ignore
 
 from src.config import TrainConfig, smoke_config
+from src.data_loading import LABEL_TUMOR
 from src.losses import build_loss
 from src.model import NUM_CLASSES, build_unet, count_parameters
 from src.patching import KEYS_IMAGE, KEYS_LABEL, build_train_patch_transform
@@ -339,11 +340,23 @@ def train_one_epoch(
     device: torch.device,
     cfg: TrainConfig,
     scaler: GradScaler | None,
-) -> float:
-    """Run ``cfg.steps_per_epoch`` optimizer steps; return mean loss."""
+) -> tuple[float, float]:
+    """
+    Run ``cfg.steps_per_epoch`` optimizer steps.
+
+    Returns
+    -------
+    mean_loss :
+        Average training loss over the epoch's steps.
+    tumor_patch_fraction :
+        Fraction of sampled patches that contain ≥1 tumor voxel (label==2).
+        Use this to verify tumor-keyed RandCrop sampling is working.
+    """
     model.train()
     iterator = iter(loader)
     losses: list[float] = []
+    tumor_patches = 0
+    total_patches = 0
     use_amp = bool(cfg.use_amp and device.type == "cuda" and scaler is not None)
 
     for _step in range(cfg.steps_per_epoch):
@@ -358,6 +371,11 @@ def train_one_epoch(
         # Labels may be float meta-tensors; loss expects integer class maps.
         if labels.dtype != torch.int64 and labels.dtype != torch.long:
             labels = labels.long()
+
+        # Per-patch tumor presence (batch dim).
+        has_tumor = (labels == LABEL_TUMOR).flatten(1).any(dim=1)
+        tumor_patches += int(has_tumor.sum().item())
+        total_patches += int(labels.shape[0])
 
         optimizer.zero_grad(set_to_none=True)
 
@@ -375,7 +393,9 @@ def train_one_epoch(
 
         losses.append(float(loss.detach().item()))
 
-    return float(np.mean(losses)) if losses else float("nan")
+    mean_loss = float(np.mean(losses)) if losses else float("nan")
+    tumor_frac = float(tumor_patches / total_patches) if total_patches else float("nan")
+    return mean_loss, tumor_frac
 
 
 @torch.no_grad()
@@ -599,7 +619,7 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
         t_epoch = time.time()
 
         t_train = time.time()
-        train_loss = train_one_epoch(
+        train_loss, tumor_patch_frac = train_one_epoch(
             model, train_loader, optimizer, loss_fn, device, cfg, scaler
         )
         train_seconds = time.time() - t_train
@@ -636,6 +656,7 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
             "dice_background": round(dice["background"], 6) if do_val else "",
             "dice_pancreas": round(dice["pancreas"], 6) if do_val else "",
             "dice_tumor": round(dice["tumor"], 6) if do_val else "",
+            "tumor_patch_frac": round(tumor_patch_frac, 4),
             "lr": lr_now,
             "train_seconds": round(train_seconds, 1),
             "val_seconds": round(val_seconds, 1),
@@ -647,6 +668,7 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
         print(
             f"Epoch {epoch:03d}/{cfg.max_epochs - 1} | "
             f"train_loss={train_loss:.4f} | "
+            f"tumor_patches={100 * tumor_patch_frac:.1f}% | "
             + (
                 f"val_loss={val_loss:.4f} | "
                 f"Dice bg={dice['background']:.3f} "

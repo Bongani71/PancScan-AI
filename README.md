@@ -190,6 +190,15 @@ python -m src.train --data-dir /kaggle/input/task07-pancreas/Task07_Pancreas
 | Checkpoints | `best_tumor_dice.pt`, `last.pt` (resumable) |
 | `--subset N` | First N train patients + proportional val (e.g. 25 → ~5 val) |
 | VRAM probe | At startup on CUDA: one train step reports peak GB + batch-size hint |
+| `tumor_patch_frac` | Logged each epoch — fraction of train patches with ≥1 tumor voxel |
+
+**Tumor Dice stuck near 0?** Check data vs sampling first (do not change loss yet):
+
+```bash
+python -m src.diagnose_tumor --subset 25
+```
+
+Positive patch crops are keyed on **label==2 (tumor)**, not pancreas. Console/CSV report `tumor_patches=XX%` each epoch — expect roughly ~67% with pos:neg=2:1 when volumes contain tumor.
 
 ### GPU memory (Colab T4, 16 GB)
 
