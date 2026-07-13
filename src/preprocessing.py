@@ -184,9 +184,10 @@ def apply_hu_window(
 
 def list_training_cases(data_dir: Path | None = None) -> list[dict[str, str]]:
     """
-    Return training cases as dicts with patient_id, image path, label path.
+    Return training cases as dicts with patient_id plus resolved image/label paths.
 
-    Paths are absolute strings so the split JSON is self-contained.
+    Paths are resolved against ``data_dir`` at call time (portable). The saved
+    ``patient_split.json`` stores **patient IDs only** — never absolute paths.
     """
     root = data_dir or get_default_data_dir()
     manifest = load_dataset_manifest(root)
@@ -198,21 +199,22 @@ def list_training_cases(data_dir: Path | None = None) -> list[dict[str, str]]:
         cases.append(
             {
                 "patient_id": patient_id,
-                "image": str(image_path.resolve()),
-                "label": str(label_path.resolve()),
+                "image": str(image_path),
+                "label": str(label_path),
             }
         )
     return cases
 
 
 def create_patient_split(
-    cases: list[dict[str, str]],
+    cases: list[dict[str, str]] | list[str],
     ratios: dict[str, float] | None = None,
     seed: int = SPLIT_SEED,
-) -> dict[str, list[dict[str, str]]]:
+) -> dict[str, list[str]]:
     """
     Split cases by patient ID (not by slice) to avoid data leakage.
 
+    Returns lists of **patient ID strings only** (portable across machines).
     Default 70% train / 15% val / 15% test. The shuffle is seeded so the
     same split is produced every run when seed and case list are unchanged.
     """
@@ -220,8 +222,14 @@ def create_patient_split(
     if abs(sum(ratios.values()) - 1.0) > 1e-6:
         raise ValueError(f"Split ratios must sum to 1.0, got {ratios}")
 
+    # Accept either list[str] IDs or list[dict] with patient_id.
+    if cases and isinstance(cases[0], dict):
+        ids = [c["patient_id"] for c in cases]  # type: ignore[index]
+    else:
+        ids = list(cases)  # type: ignore[arg-type]
+
     rng = random.Random(seed)
-    shuffled = cases.copy()
+    shuffled = ids.copy()
     rng.shuffle(shuffled)
 
     n = len(shuffled)
@@ -237,42 +245,140 @@ def create_patient_split(
     }
 
     # Sanity: no patient appears in more than one split.
-    ids = {s: {c["patient_id"] for c in split[s]} for s in split}
-    assert ids["train"].isdisjoint(ids["val"])
-    assert ids["train"].isdisjoint(ids["test"])
-    assert ids["val"].isdisjoint(ids["test"])
+    id_sets = {s: set(split[s]) for s in split}
+    assert id_sets["train"].isdisjoint(id_sets["val"])
+    assert id_sets["train"].isdisjoint(id_sets["test"])
+    assert id_sets["val"].isdisjoint(id_sets["test"])
     assert n_train + n_val + n_test == n
 
     return split
 
 
 def save_split(
-    split: dict[str, list[dict[str, str]]],
+    split: dict[str, list[str]],
     output_path: Path,
     meta: dict[str, Any] | None = None,
     seed: int = SPLIT_SEED,
     ratios: dict[str, float] | None = None,
 ) -> Path:
-    """Write the patient split to JSON for reproducible training runs."""
+    """
+    Write the patient split to JSON for reproducible training runs.
+
+    Format (portable — IDs only, no absolute paths)::
+
+        {
+          "format_version": 2,
+          "splits": {
+            "train": ["pancreas_147", ...],
+            "val": [...],
+            "test": [...]
+          }
+        }
+    """
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    # Ensure we only serialize patient ID strings.
+    clean = {
+        k: [
+            (c["patient_id"] if isinstance(c, dict) else str(c))
+            for c in v
+        ]
+        for k, v in split.items()
+    }
     payload = {
+        "format_version": 2,
         "seed": seed,
         "ratios": ratios or SPLIT_RATIOS,
-        "counts": {k: len(v) for k, v in split.items()},
+        "counts": {k: len(v) for k, v in clean.items()},
         "meta": meta or {},
-        "splits": split,
+        "splits": clean,
     }
     with output_path.open("w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
     return output_path
 
 
-def load_split(path: Path) -> dict[str, list[dict[str, str]]]:
-    """Load a previously saved split JSON."""
-    with Path(path).open("r", encoding="utf-8") as f:
+def resolve_case_paths(patient_id: str, data_dir: Path) -> dict[str, str]:
+    """
+    Build image/label paths for one patient relative to ``data_dir``.
+
+    Expected layout::
+
+        data_dir/imagesTr/{patient_id}.nii.gz
+        data_dir/labelsTr/{patient_id}.nii.gz
+    """
+    data_dir = Path(data_dir)
+    image = data_dir / "imagesTr" / f"{patient_id}.nii.gz"
+    label = data_dir / "labelsTr" / f"{patient_id}.nii.gz"
+    return {
+        "patient_id": patient_id,
+        "image": str(image),
+        "label": str(label),
+    }
+
+
+def resolve_split_cases(
+    patient_ids: list[str],
+    data_dir: Path,
+    *,
+    check_exists: bool = True,
+) -> list[dict[str, str]]:
+    """Resolve a list of patient IDs into MONAI-ready path dicts."""
+    cases = [resolve_case_paths(pid, data_dir) for pid in patient_ids]
+    if check_exists and cases:
+        missing = [c for c in cases if not Path(c["image"]).exists()]
+        if missing:
+            sample = missing[0]
+            raise FileNotFoundError(
+                f"Could not find {len(missing)} image(s) under {data_dir}.\n"
+                f"Example missing: {sample['image']}\n"
+                "Set TrainConfig.data_dir / --data-dir to your Task07_Pancreas root "
+                "(the folder that contains imagesTr/ and labelsTr/)."
+            )
+    return cases
+
+
+def load_split(path: Path) -> dict[str, list[str]]:
+    """
+    Load a previously saved split JSON.
+
+    Returns ``{"train": [...ids], "val": [...], "test": [...]}``.
+    Rejects legacy format_version < 2 (absolute Windows paths) with a clear
+    message to regenerate via ``python -m src.preprocessing``.
+    """
+    path = Path(path)
+    with path.open("r", encoding="utf-8") as f:
         payload = json.load(f)
-    return payload["splits"]
+
+    splits = payload["splits"]
+    format_version = int(payload.get("format_version", 1))
+
+    # Detect legacy absolute-path entries even if format_version is missing.
+    sample = None
+    for key in ("train", "val", "test"):
+        if splits.get(key):
+            sample = splits[key][0]
+            break
+
+    is_legacy = format_version < 2 or (
+        isinstance(sample, dict) and ("image" in sample or "label" in sample)
+    )
+    if is_legacy:
+        raise ValueError(
+            f"Legacy patient_split.json detected at {path} "
+            "(stores absolute file paths from the machine that generated it).\n"
+            "This breaks training on other machines (e.g. Kaggle/Colab).\n\n"
+            "Fix: delete outputs/patient_split.json and regenerate:\n"
+            "  python -m src.preprocessing\n"
+            "The new file stores patient IDs only; train.py joins them with "
+            "data_dir (default: data/Task07_Pancreas) at runtime."
+        )
+
+    # Normalize to list[str]
+    return {
+        k: [str(pid) for pid in v]
+        for k, v in splits.items()
+    }
 
 
 def compute_class_balance(
@@ -625,7 +731,7 @@ def main() -> None:
     print(f"Found {len(cases)} labeled training cases")
 
     # ------------------------------------------------------------------
-    # 1) Patient-level split (reproducible)
+    # 1) Patient-level split (reproducible, IDs only — portable)
     # ------------------------------------------------------------------
     split = create_patient_split(cases, seed=args.seed)
     split_path = save_split(
@@ -633,7 +739,8 @@ def main() -> None:
         out_dir / "patient_split.json",
         seed=args.seed,
         meta={
-            "data_dir": str(data_dir.resolve()),
+            # Relative hint only — never bake machine-specific absolute paths.
+            "data_dir_hint": "data/Task07_Pancreas",
             "target_spacing_mm": list(TARGET_SPACING),
             "hu_window": [SOFT_TISSUE_HU_MIN, SOFT_TISSUE_HU_MAX],
             "crop_margin_voxels": CROP_MARGIN,
@@ -642,6 +749,10 @@ def main() -> None:
     print(
         f"Saved patient split -> {split_path} "
         f"(train={len(split['train'])}, val={len(split['val'])}, test={len(split['test'])})"
+    )
+    print(
+        "  Format: patient IDs only (format_version=2). "
+        "train.py joins them with data_dir at runtime."
     )
 
     # ------------------------------------------------------------------

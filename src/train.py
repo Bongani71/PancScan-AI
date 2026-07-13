@@ -61,7 +61,11 @@ from src.config import TrainConfig, smoke_config
 from src.losses import build_loss
 from src.model import NUM_CLASSES, build_unet, count_parameters
 from src.patching import KEYS_IMAGE, KEYS_LABEL, build_train_patch_transform
-from src.preprocessing import build_deterministic_transforms, load_split
+from src.preprocessing import (
+    build_deterministic_transforms,
+    load_split,
+    resolve_split_cases,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -77,13 +81,15 @@ def set_seed(seed: int) -> None:
 
 
 def apply_patient_subset(
-    train_cases: list[dict[str, str]],
-    val_cases: list[dict[str, str]],
+    train_cases: list,
+    val_cases: list,
     n_train: int,
-) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+) -> tuple[list, list]:
     """
     Take the first ``n_train`` patients from the train split and a proportional
     slice of validation patients (preserves the original train:val ratio).
+
+    Works on lists of patient ID strings or path dicts.
 
     Example: full split is 197 train / 42 val (~4.6:1). ``--subset 25`` →
     25 train / ~5 val (at least 1 val case if any exist).
@@ -164,7 +170,7 @@ def print_vram_guidance(info: dict[str, Any]) -> None:
         print(
             "GPU: not available on this machine. "
             "On Colab T4 (16 GB), batch=2 patch=96x96x64 with AMP typically "
-            "uses ~6–9 GB peak — comfortable. Try batch=3–4 if headroom > 6 GB; "
+            "uses ~6-9 GB peak - comfortable. Try batch=3-4 if headroom > 6 GB; "
             "batch=8 will likely OOM."
         )
         return
@@ -183,11 +189,11 @@ def print_vram_guidance(info: dict[str, Any]) -> None:
     headroom = info["headroom_gb"]
     bs = info["batch_size"]
     if headroom >= 6.0:
-        suggestion = f"Comfortable — try batch={bs + 2} or {bs + 4} next"
+        suggestion = f"Comfortable - try batch={bs + 2} or {bs + 4} next"
     elif headroom >= 3.0:
-        suggestion = f"Moderate headroom — try batch={bs + 1} cautiously"
+        suggestion = f"Moderate headroom - try batch={bs + 1} cautiously"
     else:
-        suggestion = f"Tight — keep batch={bs} or reduce patch size"
+        suggestion = f"Tight - keep batch={bs} or reduce patch size"
     print(f"  Suggestion: {suggestion}")
 
 
@@ -510,24 +516,29 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
         json.dump(cfg.to_dict(), f, indent=2)
 
     split = load_split(cfg.split_path)
-    train_cases = split["train"]
-    val_cases = split["val"]
+    train_ids = split["train"]
+    val_ids = split["val"]
 
     if cfg.smoke_test:
-        train_cases = train_cases[: cfg.smoke_train_cases]
-        val_cases = val_cases[: cfg.smoke_val_cases]
+        train_ids = train_ids[: cfg.smoke_train_cases]
+        val_ids = val_ids[: cfg.smoke_val_cases]
         print(
-            f"SMOKE TEST: using {len(train_cases)} train / {len(val_cases)} val cases, "
+            f"SMOKE TEST: using {len(train_ids)} train / {len(val_ids)} val cases, "
             f"{cfg.max_epochs} epochs x {cfg.steps_per_epoch} steps, "
             f"patch={cfg.patch_size}"
         )
     elif cfg.subset_n is not None:
-        full_train, full_val = len(train_cases), len(val_cases)
-        train_cases, val_cases = apply_patient_subset(train_cases, val_cases, cfg.subset_n)
+        full_train, full_val = len(train_ids), len(val_ids)
+        train_ids, val_ids = apply_patient_subset(train_ids, val_ids, cfg.subset_n)
         print(
-            f"SUBSET: using {len(train_cases)}/{full_train} train / "
-            f"{len(val_cases)}/{full_val} val patients (--subset {cfg.subset_n})"
+            f"SUBSET: using {len(train_ids)}/{full_train} train / "
+            f"{len(val_ids)}/{full_val} val patients (--subset {cfg.subset_n})"
         )
+
+    # Reconstruct paths from configurable data_dir (portable across OS/machines).
+    print(f"Data root (data_dir): {cfg.data_dir}")
+    train_cases = resolve_split_cases(train_ids, cfg.data_dir)
+    val_cases = resolve_split_cases(val_ids, cfg.data_dir)
 
     print(f"Train patients: {len(train_cases)} | Val patients: {len(val_cases)}")
     print(
@@ -535,7 +546,7 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
         f"cache={cfg.dataset_cache}"
     )
 
-    print("Building datasets (first run may preprocess & cache — can take a while)...")
+    print("Building datasets (first run may preprocess & cache - can take a while)...")
     train_loader = build_train_loader(train_cases, cfg)
     val_loader = build_val_loader(val_cases, cfg)
 
@@ -568,7 +579,7 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
         # Older torch.cuda.amp.GradScaler has no device arg
         scaler = GradScaler(enabled=use_amp) if use_amp else None
     if cfg.use_amp and device.type != "cuda":
-        print("Note: AMP requested but CUDA unavailable — training in full precision.")
+        print("Note: AMP requested but CUDA unavailable - training in full precision.")
 
     start_epoch = 0
     best_tumor_dice = float("-inf")
@@ -704,7 +715,7 @@ def run_training(cfg: TrainConfig) -> dict[str, Any]:
         )
         print(
             f"\nTiming: mean epoch={mean_epoch:.1f}s | "
-            f"extrapolated {cfg.max_epochs} epochs ≈ "
+            f"extrapolated {cfg.max_epochs} epochs ~ "
             f"{mean_epoch * cfg.max_epochs / 3600:.1f} h"
         )
     with (cfg.output_dir / "train_summary.json").open("w", encoding="utf-8") as f:
@@ -742,6 +753,13 @@ def parse_args() -> argparse.Namespace:
     )
     p.add_argument("--output-dir", type=Path, default=None)
     p.add_argument("--split", type=Path, default=None)
+    p.add_argument(
+        "--data-dir",
+        type=Path,
+        default=None,
+        help="Task07_Pancreas root (contains imagesTr/, labelsTr/). "
+        "Default: data/Task07_Pancreas relative to project root.",
+    )
     return p.parse_args()
 
 
@@ -771,6 +789,8 @@ def main() -> None:
         cfg.output_dir = args.output_dir
     if args.split is not None:
         cfg.split_path = args.split
+    if args.data_dir is not None:
+        cfg.data_dir = args.data_dir
     if args.subset is not None:
         cfg.subset_n = args.subset
         if not args.resume:

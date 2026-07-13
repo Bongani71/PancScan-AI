@@ -10,9 +10,9 @@
     "crop_margin": 20,
     "spatial_size": null
   },
-  "split_path": "outputs\\patient_split.json",
-  "class_balance_path": "outputs\\class_balance.json",
-  "viz_path": "outputs\\data_exploration\\pancreas_290_preprocess_before_after.png",
+  "split_path": "C:\\Users\\miyab\\Documents\\My Projects\\PancScan AI\\outputs\\patient_split.json",
+  "class_balance_path": "C:\\Users\\miyab\\Documents\\My Projects\\PancScan AI\\outputs\\class_balance.json",
+  "viz_path": "C:\\Users\\miyab\\Documents\\My Projects\\PancScan AI\\outputs\\data_exploration\\pancreas_290_preprocess_before_after.png",
   "example_case": {
     "patient_id": "pancreas_290",
     "original_shape": [

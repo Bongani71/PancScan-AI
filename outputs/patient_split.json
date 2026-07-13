@@ -1,4 +1,5 @@
 {
+  "format_version": 2,
   "seed": 42,
   "ratios": {
     "train": 0.7,
@@ -11,7 +12,7 @@
     "test": 42
   },
   "meta": {
-    "data_dir": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas",
+    "data_dir_hint": "data/Task07_Pancreas",
     "target_spacing_mm": [
       1.0,
       1.0,
@@ -25,1415 +26,291 @@
   },
   "splits": {
     "train": [
-      {
-        "patient_id": "pancreas_147",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_147.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_147.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_135",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_135.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_135.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_234",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_234.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_234.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_284",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_284.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_284.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_182",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_182.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_182.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_321",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_321.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_321.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_274",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_274.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_274.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_103",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_103.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_103.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_077",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_077.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_077.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_406",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_406.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_406.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_066",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_066.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_066.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_095",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_095.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_095.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_167",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_167.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_167.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_279",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_279.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_279.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_391",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_391.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_391.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_106",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_106.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_106.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_209",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_209.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_209.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_286",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_286.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_286.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_266",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_266.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_266.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_372",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_372.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_372.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_320",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_320.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_320.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_325",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_325.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_325.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_392",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_392.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_392.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_127",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_127.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_127.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_270",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_270.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_270.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_069",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_069.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_069.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_241",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_241.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_241.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_227",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_227.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_227.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_315",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_315.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_315.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_169",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_169.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_169.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_016",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_016.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_016.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_389",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_389.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_389.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_382",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_382.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_382.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_358",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_358.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_358.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_374",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_374.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_374.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_350",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_350.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_350.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_293",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_293.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_293.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_323",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_323.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_323.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_378",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_378.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_378.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_348",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_348.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_348.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_070",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_070.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_070.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_261",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_261.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_261.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_243",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_243.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_243.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_415",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_415.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_415.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_345",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_345.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_345.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_175",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_175.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_175.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_278",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_278.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_278.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_302",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_302.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_302.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_199",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_199.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_199.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_269",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_269.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_269.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_356",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_356.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_356.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_297",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_297.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_297.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_075",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_075.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_075.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_088",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_088.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_088.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_246",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_246.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_246.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_183",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_183.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_183.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_048",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_048.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_048.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_050",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_050.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_050.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_377",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_377.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_377.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_311",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_311.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_311.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_119",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_119.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_119.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_313",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_313.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_313.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_226",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_226.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_226.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_021",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_021.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_021.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_309",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_309.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_309.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_265",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_265.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_265.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_308",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_308.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_308.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_086",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_086.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_086.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_122",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_122.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_122.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_018",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_018.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_018.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_170",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_170.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_170.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_213",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_213.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_213.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_398",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_398.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_398.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_137",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_137.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_137.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_201",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_201.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_201.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_401",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_401.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_401.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_343",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_343.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_343.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_347",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_347.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_347.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_303",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_303.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_303.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_131",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_131.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_131.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_015",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_015.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_015.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_361",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_361.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_361.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_181",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_181.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_181.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_330",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_330.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_330.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_025",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_025.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_025.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_277",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_277.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_277.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_275",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_275.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_275.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_102",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_102.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_102.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_229",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_229.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_229.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_360",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_360.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_360.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_291",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_291.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_291.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_094",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_094.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_094.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_172",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_172.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_172.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_230",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_230.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_230.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_198",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_198.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_198.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_035",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_035.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_035.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_093",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_093.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_093.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_092",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_092.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_092.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_334",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_334.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_334.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_155",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_155.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_155.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_333",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_333.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_333.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_244",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_244.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_244.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_344",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_344.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_344.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_253",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_253.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_253.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_267",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_267.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_267.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_004",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_004.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_004.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_296",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_296.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_296.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_339",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_339.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_339.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_385",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_385.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_385.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_346",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_346.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_346.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_395",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_395.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_395.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_328",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_328.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_328.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_032",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_032.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_032.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_222",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_222.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_222.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_412",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_412.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_412.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_387",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_387.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_387.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_019",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_019.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_019.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_091",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_091.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_091.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_283",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_283.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_283.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_379",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_379.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_379.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_130",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_130.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_130.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_304",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_304.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_304.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_006",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_006.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_006.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_336",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_336.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_336.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_207",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_207.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_207.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_180",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_180.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_180.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_197",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_197.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_197.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_262",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_262.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_262.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_290",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_290.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_290.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_120",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_120.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_120.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_049",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_049.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_049.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_399",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_399.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_399.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_219",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_219.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_219.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_376",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_376.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_376.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_218",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_218.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_218.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_327",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_327.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_327.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_224",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_224.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_224.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_056",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_056.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_056.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_113",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_113.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_113.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_375",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_375.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_375.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_299",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_299.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_299.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_239",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_239.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_239.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_074",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_074.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_074.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_393",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_393.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_393.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_064",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_064.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_064.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_191",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_191.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_191.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_196",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_196.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_196.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_259",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_259.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_259.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_165",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_165.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_165.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_217",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_217.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_217.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_351",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_351.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_351.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_204",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_204.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_204.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_159",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_159.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_159.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_124",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_124.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_124.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_276",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_276.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_276.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_012",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_012.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_012.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_215",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_215.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_215.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_107",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_107.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_107.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_258",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_258.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_258.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_145",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_145.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_145.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_231",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_231.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_231.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_405",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_405.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_405.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_046",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_046.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_046.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_210",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_210.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_210.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_194",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_194.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_194.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_310",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_310.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_310.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_186",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_186.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_186.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_010",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_010.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_010.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_287",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_287.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_287.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_367",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_367.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_367.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_126",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_126.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_126.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_419",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_419.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_419.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_100",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_100.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_100.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_225",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_225.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_225.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_280",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_280.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_280.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_295",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_295.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_295.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_203",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_203.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_203.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_042",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_042.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_042.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_410",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_410.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_410.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_160",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_160.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_160.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_179",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_179.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_179.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_300",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_300.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_300.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_369",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_369.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_369.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_157",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_157.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_157.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_029",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_029.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_029.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_096",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_096.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_096.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_071",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_071.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_071.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_110",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_110.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_110.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_187",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_187.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_187.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_364",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_364.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_364.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_294",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_294.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_294.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_043",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_043.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_043.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_125",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_125.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_125.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_331",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_331.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_331.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_316",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_316.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_316.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_418",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_418.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_418.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_289",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_289.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_289.nii.gz"
-      }
+      "pancreas_147",
+      "pancreas_135",
+      "pancreas_234",
+      "pancreas_284",
+      "pancreas_182",
+      "pancreas_321",
+      "pancreas_274",
+      "pancreas_103",
+      "pancreas_077",
+      "pancreas_406",
+      "pancreas_066",
+      "pancreas_095",
+      "pancreas_167",
+      "pancreas_279",
+      "pancreas_391",
+      "pancreas_106",
+      "pancreas_209",
+      "pancreas_286",
+      "pancreas_266",
+      "pancreas_372",
+      "pancreas_320",
+      "pancreas_325",
+      "pancreas_392",
+      "pancreas_127",
+      "pancreas_270",
+      "pancreas_069",
+      "pancreas_241",
+      "pancreas_227",
+      "pancreas_315",
+      "pancreas_169",
+      "pancreas_016",
+      "pancreas_389",
+      "pancreas_382",
+      "pancreas_358",
+      "pancreas_374",
+      "pancreas_350",
+      "pancreas_293",
+      "pancreas_323",
+      "pancreas_378",
+      "pancreas_348",
+      "pancreas_070",
+      "pancreas_261",
+      "pancreas_243",
+      "pancreas_415",
+      "pancreas_345",
+      "pancreas_175",
+      "pancreas_278",
+      "pancreas_302",
+      "pancreas_199",
+      "pancreas_269",
+      "pancreas_356",
+      "pancreas_297",
+      "pancreas_075",
+      "pancreas_088",
+      "pancreas_246",
+      "pancreas_183",
+      "pancreas_048",
+      "pancreas_050",
+      "pancreas_377",
+      "pancreas_311",
+      "pancreas_119",
+      "pancreas_313",
+      "pancreas_226",
+      "pancreas_021",
+      "pancreas_309",
+      "pancreas_265",
+      "pancreas_308",
+      "pancreas_086",
+      "pancreas_122",
+      "pancreas_018",
+      "pancreas_170",
+      "pancreas_213",
+      "pancreas_398",
+      "pancreas_137",
+      "pancreas_201",
+      "pancreas_401",
+      "pancreas_343",
+      "pancreas_347",
+      "pancreas_303",
+      "pancreas_131",
+      "pancreas_015",
+      "pancreas_361",
+      "pancreas_181",
+      "pancreas_330",
+      "pancreas_025",
+      "pancreas_277",
+      "pancreas_275",
+      "pancreas_102",
+      "pancreas_229",
+      "pancreas_360",
+      "pancreas_291",
+      "pancreas_094",
+      "pancreas_172",
+      "pancreas_230",
+      "pancreas_198",
+      "pancreas_035",
+      "pancreas_093",
+      "pancreas_092",
+      "pancreas_334",
+      "pancreas_155",
+      "pancreas_333",
+      "pancreas_244",
+      "pancreas_344",
+      "pancreas_253",
+      "pancreas_267",
+      "pancreas_004",
+      "pancreas_296",
+      "pancreas_339",
+      "pancreas_385",
+      "pancreas_346",
+      "pancreas_395",
+      "pancreas_328",
+      "pancreas_032",
+      "pancreas_222",
+      "pancreas_412",
+      "pancreas_387",
+      "pancreas_019",
+      "pancreas_091",
+      "pancreas_283",
+      "pancreas_379",
+      "pancreas_130",
+      "pancreas_304",
+      "pancreas_006",
+      "pancreas_336",
+      "pancreas_207",
+      "pancreas_180",
+      "pancreas_197",
+      "pancreas_262",
+      "pancreas_290",
+      "pancreas_120",
+      "pancreas_049",
+      "pancreas_399",
+      "pancreas_219",
+      "pancreas_376",
+      "pancreas_218",
+      "pancreas_327",
+      "pancreas_224",
+      "pancreas_056",
+      "pancreas_113",
+      "pancreas_375",
+      "pancreas_299",
+      "pancreas_239",
+      "pancreas_074",
+      "pancreas_393",
+      "pancreas_064",
+      "pancreas_191",
+      "pancreas_196",
+      "pancreas_259",
+      "pancreas_165",
+      "pancreas_217",
+      "pancreas_351",
+      "pancreas_204",
+      "pancreas_159",
+      "pancreas_124",
+      "pancreas_276",
+      "pancreas_012",
+      "pancreas_215",
+      "pancreas_107",
+      "pancreas_258",
+      "pancreas_145",
+      "pancreas_231",
+      "pancreas_405",
+      "pancreas_046",
+      "pancreas_210",
+      "pancreas_194",
+      "pancreas_310",
+      "pancreas_186",
+      "pancreas_010",
+      "pancreas_287",
+      "pancreas_367",
+      "pancreas_126",
+      "pancreas_419",
+      "pancreas_100",
+      "pancreas_225",
+      "pancreas_280",
+      "pancreas_295",
+      "pancreas_203",
+      "pancreas_042",
+      "pancreas_410",
+      "pancreas_160",
+      "pancreas_179",
+      "pancreas_300",
+      "pancreas_369",
+      "pancreas_157",
+      "pancreas_029",
+      "pancreas_096",
+      "pancreas_071",
+      "pancreas_110",
+      "pancreas_187",
+      "pancreas_364",
+      "pancreas_294",
+      "pancreas_043",
+      "pancreas_125",
+      "pancreas_331",
+      "pancreas_316",
+      "pancreas_418",
+      "pancreas_289"
     ],
     "val": [
-      {
-        "patient_id": "pancreas_421",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_421.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_421.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_255",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_255.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_255.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_173",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_173.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_173.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_342",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_342.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_342.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_028",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_028.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_028.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_001",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_001.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_001.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_045",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_045.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_045.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_037",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_037.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_037.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_105",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_105.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_105.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_166",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_166.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_166.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_414",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_414.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_414.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_078",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_078.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_078.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_061",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_061.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_061.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_040",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_040.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_040.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_114",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_114.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_114.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_366",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_366.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_366.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_247",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_247.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_247.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_292",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_292.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_292.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_098",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_098.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_098.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_099",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_099.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_099.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_235",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_235.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_235.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_158",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_158.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_158.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_138",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_138.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_138.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_411",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_411.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_411.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_404",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_404.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_404.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_055",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_055.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_055.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_357",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_357.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_357.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_409",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_409.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_409.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_178",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_178.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_178.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_104",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_104.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_104.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_268",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_268.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_268.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_301",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_301.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_301.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_362",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_362.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_362.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_051",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_051.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_051.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_402",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_402.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_402.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_254",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_254.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_254.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_228",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_228.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_228.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_117",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_117.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_117.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_193",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_193.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_193.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_080",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_080.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_080.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_140",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_140.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_140.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_024",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_024.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_024.nii.gz"
-      }
+      "pancreas_421",
+      "pancreas_255",
+      "pancreas_173",
+      "pancreas_342",
+      "pancreas_028",
+      "pancreas_001",
+      "pancreas_045",
+      "pancreas_037",
+      "pancreas_105",
+      "pancreas_166",
+      "pancreas_414",
+      "pancreas_078",
+      "pancreas_061",
+      "pancreas_040",
+      "pancreas_114",
+      "pancreas_366",
+      "pancreas_247",
+      "pancreas_292",
+      "pancreas_098",
+      "pancreas_099",
+      "pancreas_235",
+      "pancreas_158",
+      "pancreas_138",
+      "pancreas_411",
+      "pancreas_404",
+      "pancreas_055",
+      "pancreas_357",
+      "pancreas_409",
+      "pancreas_178",
+      "pancreas_104",
+      "pancreas_268",
+      "pancreas_301",
+      "pancreas_362",
+      "pancreas_051",
+      "pancreas_402",
+      "pancreas_254",
+      "pancreas_228",
+      "pancreas_117",
+      "pancreas_193",
+      "pancreas_080",
+      "pancreas_140",
+      "pancreas_024"
     ],
     "test": [
-      {
-        "patient_id": "pancreas_111",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_111.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_111.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_211",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_211.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_211.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_101",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_101.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_101.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_370",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_370.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_370.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_365",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_365.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_365.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_413",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_413.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_413.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_005",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_005.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_005.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_236",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_236.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_236.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_109",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_109.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_109.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_081",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_081.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_081.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_416",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_416.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_416.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_318",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_318.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_318.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_256",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_256.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_256.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_305",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_305.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_305.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_129",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_129.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_129.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_326",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_326.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_326.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_084",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_084.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_084.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_149",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_149.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_149.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_041",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_041.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_041.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_214",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_214.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_214.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_148",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_148.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_148.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_354",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_354.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_354.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_264",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_264.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_264.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_052",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_052.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_052.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_285",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_285.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_285.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_388",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_388.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_388.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_312",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_312.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_312.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_242",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_242.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_242.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_089",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_089.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_089.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_298",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_298.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_298.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_083",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_083.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_083.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_200",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_200.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_200.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_355",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_355.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_355.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_067",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_067.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_067.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_249",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_249.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_249.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_380",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_380.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_380.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_087",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_087.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_087.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_386",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_386.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_386.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_400",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_400.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_400.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_329",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_329.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_329.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_212",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_212.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_212.nii.gz"
-      },
-      {
-        "patient_id": "pancreas_058",
-        "image": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\imagesTr\\pancreas_058.nii.gz",
-        "label": "C:\\Users\\miyab\\Documents\\My Projects\\Cancer Vision AI\\Task07_Pancreas\\Task07_Pancreas\\labelsTr\\pancreas_058.nii.gz"
-      }
+      "pancreas_111",
+      "pancreas_211",
+      "pancreas_101",
+      "pancreas_370",
+      "pancreas_365",
+      "pancreas_413",
+      "pancreas_005",
+      "pancreas_236",
+      "pancreas_109",
+      "pancreas_081",
+      "pancreas_416",
+      "pancreas_318",
+      "pancreas_256",
+      "pancreas_305",
+      "pancreas_129",
+      "pancreas_326",
+      "pancreas_084",
+      "pancreas_149",
+      "pancreas_041",
+      "pancreas_214",
+      "pancreas_148",
+      "pancreas_354",
+      "pancreas_264",
+      "pancreas_052",
+      "pancreas_285",
+      "pancreas_388",
+      "pancreas_312",
+      "pancreas_242",
+      "pancreas_089",
+      "pancreas_298",
+      "pancreas_083",
+      "pancreas_200",
+      "pancreas_355",
+      "pancreas_067",
+      "pancreas_249",
+      "pancreas_380",
+      "pancreas_087",
+      "pancreas_386",
+      "pancreas_400",
+      "pancreas_329",
+      "pancreas_212",
+      "pancreas_058"
     ]
   }
 }

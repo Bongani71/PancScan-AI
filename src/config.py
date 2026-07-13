@@ -21,6 +21,7 @@ class TrainConfig:
     """All knobs for ``src.train`` in one place."""
 
     # --- paths ---
+    # DATA_ROOT: folder containing imagesTr/ and labelsTr/ (portable; no OS-specific paths).
     data_dir: Path = field(default_factory=lambda: get_project_root() / "data" / "Task07_Pancreas")
     split_path: Path = field(default_factory=lambda: get_project_root() / "outputs" / "patient_split.json")
     output_dir: Path = field(default_factory=lambda: get_project_root() / "outputs" / "training")

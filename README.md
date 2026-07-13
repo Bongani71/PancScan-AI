@@ -102,11 +102,25 @@ Resamples to **1.0 × 1.0 × 2.5 mm**, applies soft-tissue HU window **[−100, 
 python -m src.preprocessing
 ```
 
+**Portable split format:** `outputs/patient_split.json` stores **patient IDs only** (e.g. `"pancreas_270"`), never absolute paths. Training joins IDs with `data_dir` (`data/Task07_Pancreas` by default, or `--data-dir` on Kaggle/Colab).
+
+> If you still have an older `patient_split.json` that embeds Windows paths, **delete it and re-run preprocessing** before training:
+> ```bash
+> # Windows PowerShell
+> Remove-Item outputs\patient_split.json
+> python -m src.preprocessing
+>
+> # Linux / Kaggle
+> rm outputs/patient_split.json
+> python -m src.preprocessing
+> ```
+> Training will refuse to start and print the same instructions if it detects the legacy format.
+
 Outputs:
 
 | File | Purpose |
 |------|---------|
-| `outputs/patient_split.json` | Reproducible train/val/test patient IDs |
+| `outputs/patient_split.json` | Reproducible train/val/test **patient IDs** (format_version=2) |
 | `outputs/class_balance.json` | Voxel counts + suggested CE weights |
 | `outputs/preprocessing_summary.json` | Config + example before/after shapes |
 | `outputs/data_exploration/*_preprocess_before_after.png` | Sanity-check visualization |
@@ -114,11 +128,12 @@ Outputs:
 Reuse from training later:
 
 ```python
-from src.preprocessing import PreprocessingPipeline, load_split
+from src.preprocessing import PreprocessingPipeline, load_split, resolve_split_cases
 
 pipe = PreprocessingPipeline()
 case = pipe(image_path, label_path)
-split = load_split("outputs/patient_split.json")
+ids = load_split("outputs/patient_split.json")
+train_cases = resolve_split_cases(ids["train"], data_dir="data/Task07_Pancreas")
 ```
 
 ---
@@ -160,6 +175,8 @@ python -m src.train
 # optional:
 python -m src.train --loss focal_tversky --batch-size 1 --lr 1e-4
 python -m src.train --resume          # continue from outputs/training/last.pt
+# On Kaggle/Colab, point at your dataset mount:
+python -m src.train --data-dir /kaggle/input/task07-pancreas/Task07_Pancreas
 ```
 
 | Behavior | Detail |
